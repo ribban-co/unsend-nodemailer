@@ -17,6 +17,10 @@ export class UnsendTransport implements Transport<SentMessageInfo> {
         this.apiUrl = apiUrl.endsWith('/') ? `${apiUrl}api/v1` : `${apiUrl}/api/v1`;
     }
 
+    public static makeTransport(options: UnsendTransporterOptions) {
+        return new UnsendTransport(options);
+    }
+
     async send(mail: MailMessage, callback: (err: Error | null, info: SentMessageInfo) => void): Promise<SentMessageInfo> {
         if (!mail.data.from || !mail.data.to) {
             return callback(new Error('No subject, from or to address specified. Ensure that "subject", "from" and "to" fields are set.'), null);
