@@ -1,0 +1,26 @@
+{
+    "name": "@ribban/unsend-nodemailer",
+    "version": "1.0.0",
+    "description": "Transport for Nodemailer to send mails using the Unsend API.",
+    "author": "RIBBAN <william@ribban.co>",
+    "license": "MIT",
+    "main": "dist/main.js",
+    "module": "dist/main.mjs",
+    "types": "dist/main.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ribban-co/unsend-nodemailer.git"
+    },
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch"
+    },
+    "peerDependencies": {
+        "nodemailer": "^6.10.0"
+    },
+    "devDependencies": {
+        "tsup": "^8.4.0",
+        "typescript": "^5.7.3",
+        "@types/nodemailer": "^6.4.17"
+    }
+}
