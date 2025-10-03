@@ -26,7 +26,6 @@ const mailer = createTransport(
 ```
 
 #### Custom API Endpoint (Optional)
-
 If you need to use a custom Unsend API endpoint (e.g., self-hosted instance):
 
 ```typescript
