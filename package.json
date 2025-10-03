@@ -1,6 +1,6 @@
 {
     "name": "@ribban/unsend-nodemailer",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "description": "Transport for Nodemailer to send mails using the Unsend API.",
     "author": "RIBBAN <william@ribban.co>",
     "license": "MIT",
