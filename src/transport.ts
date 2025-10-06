@@ -119,8 +119,12 @@ export class UnsendTransport implements Transport<SentMessageInfo> {
     };
 
     private validateEmail(email: string, fieldName: string): void {
+        // Extract email address from "Display Name <email@example.com>" format
+        const angleMatch = email.match(/<([^>]+)>/);
+        const emailToValidate = angleMatch ? angleMatch[1] : email;
+
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
+        if (!emailRegex.test(emailToValidate)) {
             throw new Error(`Invalid email address in "${fieldName}": "${email}". Please provide a valid email address (e.g., user@example.com).`);
         }
     }
