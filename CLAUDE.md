@@ -4,28 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A Nodemailer transport package that enables sending emails through the Unsend API. The package wraps the Unsend SDK to provide a Nodemailer-compatible interface.
+A Nodemailer transport package that enables sending emails through the Usesend API. The package wraps the Usesend SDK to provide a Nodemailer-compatible interface.
 
 ## Architecture
 
 ### Core Components
 
-- **src/transport.ts**: The `UnsendTransport` class implements Nodemailer's `Transport` interface. Key responsibilities:
+- **src/transport.ts**: The `UsesendTransport` class implements Nodemailer's `Transport` interface. Key responsibilities:
   - Validates required fields (from, to, subject) and email address formats before sending
-  - Converts Nodemailer address formats (string | Address | Array<string | Address>) to Unsend's string array format via `toUnsendAddresses()`
-  - Wraps the Unsend SDK (`unsend.emails.send()`) with enhanced error handling
+  - Converts Nodemailer address formats (string | Address | Array<string | Address>) to Usesend's string array format via `toUsesendAddresses()`
+  - Wraps the Usesend SDK (`usesend.emails.send()`) with enhanced error handling
   - Provides detailed error messages with context-aware hints based on HTTP status codes
   - Uses factory pattern via `makeTransport()` static method for initialization
 
-- **src/types/transport.ts**: Defines `UnsendTransporterOptions` interface with required `apiKey` and optional `apiUrl`
+- **src/types/transport.ts**: Defines `UsesendTransporterOptions` interface with required `apiKey` and optional `apiUrl`
 
-- **src/main.ts**: Package entry point that exports `UnsendTransport` class and types
+- **src/main.ts**: Package entry point that exports `UsesendTransport` class and types
 
 ### Error Handling Strategy
 
 The transport implements defensive validation and enhanced error reporting:
 1. Pre-flight validation of required fields and email formats
-2. Unsend API errors are enriched with helpful debugging hints based on status codes (400, 401, 403, 429, 5xx)
+2. Usesend API errors are enriched with helpful debugging hints based on status codes (400, 401, 403, 429, 5xx)
 3. Network/generic errors wrapped with troubleshooting suggestions
 
 ## Development Commands
@@ -51,5 +51,5 @@ Runs tsup in watch mode for development
 ## Dependencies
 
 - **Peer dependency**: nodemailer ^6.10.0 (expected to be installed by consumer)
-- **Runtime dependency**: unsend ^1.3.0 (the official Unsend SDK)
+- **Runtime dependency**: usesend ^1.3.0 (the official Usesend SDK)
 - Uses package.json version for transport version reporting

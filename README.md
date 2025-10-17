@@ -1,13 +1,13 @@
-# Unsend Nodemailer
+# Usesend Nodemailer
 
-> NPM package allowing you to send emails easily with the Unsend API. 
+> NPM package allowing you to send emails easily with the Usesend API. 
 
 ### How to get started
 
 #### 1. Install the package
 
 ```bash
-npm install @ribban/unsend-nodemailer
+npm install @ribban/usesend-nodemailer
 ```
 
 ### Usage
@@ -15,24 +15,24 @@ npm install @ribban/unsend-nodemailer
 #### Create Nodemailer Transport
 
 ```typescript
-import { UnsendTransport } from '@ribban/unsend-nodemailer';
+import { UsesendTransport } from '@ribban/usesend-nodemailer';
 import { createTransport } from 'nodemailer';
 
 const mailer = createTransport(
-  UnsendTransport.makeTransport({
-    apiKey: YOUR_UNSEND_API_KEY
+  UsesendTransport.makeTransport({
+    apiKey: YOUR_USESEND_API_KEY
   })
 );
 ```
 
 #### Custom API Endpoint (Optional)
-If you need to use a custom Unsend API endpoint (e.g., self-hosted instance):
+If you need to use a custom Usesend API endpoint (e.g., self-hosted instance):
 
 ```typescript
 const mailer = createTransport(
-  UnsendTransport.makeTransport({
-    apiKey: YOUR_UNSEND_API_KEY,
-    apiUrl: 'https://your-custom-endpoint.com'  // Default is 'https://api.unsend.dev'
+  UsesendTransport.makeTransport({
+    apiKey: YOUR_USESEND_API_KEY,
+    apiUrl: 'https://your-custom-endpoint.com'  // Default is 'https://api.usesend.dev'
   })
 );
 ```

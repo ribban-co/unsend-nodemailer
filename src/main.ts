@@ -1,5 +1,5 @@
-import { UnsendTransport } from './transport';
-import { UnsendTransporterOptions } from './types/transport';
+import { UsesendTransport } from './transport';
+import { UsesendTransporterOptions } from './types/transport';
 
-export { UnsendTransport };
-export type { UnsendTransporterOptions };
+export { UsesendTransport };
+export type { UsesendTransporterOptions };

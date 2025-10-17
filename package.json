@@ -1,22 +1,22 @@
 {
-    "name": "@ribban/unsend-nodemailer",
-    "version": "2.0.4",
-    "description": "Transport for Nodemailer to send mails using the Unsend API.",
-    "author": "RIBBAN <william@ribban.co>",
+    "name": "@enemyrr/usesend-nodemailer",
+    "version": "0.1.0",
+    "description": "Transport for Nodemailer to send mails using the Usesend API.",
+    "author": "Andreas Enemyrr <andreas@enemyr.com>",
     "license": "MIT",
     "main": "dist/main.js",
     "module": "dist/main.mjs",
     "types": "dist/main.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ribban-co/unsend-nodemailer.git"
+        "url": "git+https://github.com/enemyrr/usesend-nodemailer.git"
     },
     "scripts": {
         "build": "tsup",
         "dev": "tsup --watch"
     },
     "peerDependencies": {
-        "nodemailer": "^6.10.0"
+        "nodemailer": "^7.0.9"
     },
     "devDependencies": {
         "@types/nodemailer": "^6.4.17",
@@ -24,6 +24,7 @@
         "typescript": "^5.7.3"
     },
     "dependencies": {
-        "unsend": "^1.3.0"
+        "dotenv": "^17.2.3",
+        "usesend-js": "^1.5.5"
     }
 }
